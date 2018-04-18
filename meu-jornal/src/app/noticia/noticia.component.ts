@@ -14,6 +14,7 @@ export class NoticiaComponent implements OnInit {
     "Noticia 4"];
   
   mostrarNoticia: boolean = true;
+  
 
   constructor() { }
 
@@ -23,5 +24,7 @@ export class NoticiaComponent implements OnInit {
   public esconderNoticia() {
      this.mostrarNoticia = false;
   }
-
+  public voltarNoticia() {
+    this.mostrarNoticia = true;
+  }
 }
