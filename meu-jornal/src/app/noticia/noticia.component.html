@@ -1,37 +1,37 @@
 <div class="container">
   <div class="row" *ngIf="mostrarNoticia; else noticiaUnica">
-      <div class="col-md-6" *ngFor="let noticia of noticias">
-        <div class="jumbotron">
-            <h1 class="display-4">{{ titulo }}</h1>
-            <p class="lead">{{ text }}</p>
-            <hr class="my-4">
-            <img class="tamanho" [src]="caminho_imagem"/>
-            
-            <button (click)="esconderNoticia()" type="button" class="btn btn-dark">Leia Mais
-                        </button>
-                         <app-alerta></app-alerta>            
-          </div>
+    <div class="col-md-6" *ngFor="let noticia of noticias">
+      <div class="jumbotron">
+        <h1 class="display-4">{{ titulo }}</h1>
+        <p class="lead">{{ text }}</p>
+        <hr class="my-4">
+        <img class="tamanho" [src]="caminho_imagem" />
+
+        <button (click)="esconderNoticia()" type="button" class="btn btn-dark">Leia Mais
+        </button>
+        <app-alerta></app-alerta>
+      </div>
     </div>
   </div>
 
+</div>
+
+<ng-template #noticiaUnica>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="jumbotron">
+        <h1 class="display-4">{{ titulo }}</h1>
+        <p class="lead">{{ text }}</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <button (click)="voltarNoticia()" type="button" class="btn btn-dark">Voltar</button>
+      </div>
+    </div>
   </div>
+  <div class="row">
+    <app-primeiro-exmplo></app-primeiro-exmplo>
+    <app-segundo-exemplo></app-segundo-exemplo>
+    <app-terceiro-exemplo></app-terceiro-exemplo>
 
-  <ng-template #noticiaUnica>
-      <div class="row">
-        <div class="col-md-12" >
-            <div class="jumbotron">
-                <h1 class="display-4">{{ titulo }}</h1>
-                <p class="lead">{{ text }}</p>
-                <hr class="my-4">
-                <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-                <button (click)="voltarNoticia()" type="button" class="btn btn-dark">Voltar</button>
-              </div>
-        </div>
-      </div>
-      <div class="row">
-        <app-primeiro-exmplo></app-primeiro-exmplo>
-        <app-segundo-exemplo></app-segundo-exemplo>
-        <app-terceiro-exemplo></app-terceiro-exemplo>
-
-      </div>
-    </ng-template>
+  </div>
+</ng-template>
